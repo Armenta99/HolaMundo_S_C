@@ -6,10 +6,9 @@
 # Materia: Lenguajez de Interfaz
 
 # Makefile
-all: HolaMundo64
-HolaMundo64: HolaMundo64.o
-	ld -o $@ $+
+programa: HolaMundo64.o
+	ld -o HolaMundo64 HolaMundo64.o
 HolaMundo64.o: HolaMundo64.s
-	as -g -mfpu=vfpv2 -o $@ $<
+	as -o HolaMundo64.o HolaMundo64.s
 clean:
 	rm -vf HolaMundo64 *.o
